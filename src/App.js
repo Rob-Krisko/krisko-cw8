@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import HelloWorld from './HelloWorld.jsx';
+import Counter from './Counter.jsx';
+import FilteredList from './FilteredList.jsx';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const produceList = [
+  { name: 'Apple', type: 'Fruit' },
+  { name: 'Banana', type: 'Fruit' },
+  { name: 'Orange', type: 'Fruit' },
+  { name: 'Grapes', type: 'Fruit' },
+  { name: 'Strawberry', type: 'Fruit' },
+  { name: 'Peach', type: 'Fruit' },
+  { name: 'Watermelon', type: 'Fruit' },
+  { name: 'Pineapple', type: 'Fruit' },
+  { name: 'Lemon', type: 'Fruit' },
+  { name: 'Carrot', type: 'Vegetable' },
+  { name: 'Broccoli', type: 'Vegetable' },
+  { name: 'Cucumber', type: 'Vegetable' },
+  { name: 'Bell Pepper', type: 'Vegetable' },
+  { name: 'Tomato', type: 'Vegetable' },
+  { name: 'Spinach', type: 'Vegetable' },
+  { name: 'Kale', type: 'Vegetable' },
+  { name: 'Cauliflower', type: 'Vegetable' },
+  { name: 'Eggplant', type: 'Vegetable' }
+];
+
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <HelloWorld />
+        <Counter />
+        <FilteredList items={produceList} />
+      </div>
+    );
+  }
 }
 
 export default App;
